@@ -17,16 +17,17 @@ The mod's [**Github**](https://github.com/donkeyrat/SummonerCreator) is now the 
 
 ## 1.0.0
 
- -Added a Summoner unit and faction.
+ - Added a Summoner unit and faction.
  
-### 1.0.2
-
- -Reformatted Thunderstore page.
- -Fixed extreme lag from the Summoner, at the cost of Unit Creator units working for the summoner.
-
 ### 1.0.1
 
- -Fixed minor issue with the Thunderstore page.
+ - Fixed minor issue with the Thunderstore page.
+
+### 1.0.2
+
+ - Reformatted Thunderstore page.
+ - Fixed extreme lag from the Summoner, at the cost of Unit Creator units working for the summoner.
+
   
 ## Credits
 
