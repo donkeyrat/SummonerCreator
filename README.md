@@ -27,7 +27,7 @@ The mod's [**Github**](https://github.com/donkeyrat/SummonerCreator) is now the 
 
  - Reformatted Thunderstore page.
  - Fixed extreme lag from the Summoner, at the cost of Unit Creator units working for the summoner.
-
+ - Replaced Thunderstore icon with a new one by Hambody.
   
 ## Credits
 
@@ -38,6 +38,8 @@ This mod was created by Fern, a very talented modder, and ported by Team Grad, a
 **BD - Porter**
 
 **Terren - Modeler/Icon Artist**
+
+**Hambody - Icon Artist**
 
 ## Gallery
 
