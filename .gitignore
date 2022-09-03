@@ -5,3 +5,5 @@ riderModule.iml
 /_ReSharper.Caches/
 .idea/
 Resources/
+Properties/Resources.resx
+Properties/Resources.Designer.cs
