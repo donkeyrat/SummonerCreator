@@ -1,4 +1,3 @@
-
 # Summoner Creator
 
 Have you ever felt like battles get repetitive? Well, not with the Summoner! It can summon any multitude of any random units, even modded and Unit Creator units! You can fully customize how many units and what units are summoned, and make any battle you'd like!
@@ -28,6 +27,11 @@ The mod's [**Github**](https://github.com/donkeyrat/SummonerCreator) is now the 
  - Reformatted Thunderstore page.
  - Fixed extreme lag from the Summoner, at the cost of Unit Creator units working for the summoner.
  - Replaced Thunderstore icon with a new one by Hambody.
+
+### 1.0.3
+
+ - Reformatted Gallery section of the Thunderstore page.
+ - Updated Thunderstore icon.
   
 ## Credits
 
@@ -44,6 +48,9 @@ This mod was created by Fern, a very talented modder, and ported by Team Grad, a
 ## Gallery
 
 ![enter image description here](https://i.gyazo.com/903da22c525eec981749115c14405338.jpg)
+
 ![enter image description here](https://i.gyazo.com/ae1130eb150e82fe87e2bf5c9719818f.jpg)
+
 ![enter image description here](https://i.gyazo.com/fc5ef5b2626ef93601221b50fbd82872.jpg)
+
 ![enter image description here](https://i.gyazo.com/e85c62343315e89c3c47463907bc1164.jpg)
