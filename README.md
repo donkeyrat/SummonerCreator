@@ -32,6 +32,10 @@ The mod's [**Github**](https://github.com/donkeyrat/SummonerCreator) is now the 
 
  - Reformatted Gallery section of the Thunderstore page.
  - Updated Thunderstore icon.
+
+### 1.0.4
+
+ - Updated to the latest version of TABS.
   
 ## Credits
 
