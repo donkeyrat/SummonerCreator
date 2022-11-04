@@ -2,7 +2,7 @@
 
 namespace SummonerCreator
 {
-	[BepInPlugin("teamgrad.summoner", "Summoner Creator", "1.0.2")]
+	[BepInPlugin("teamgrad.summoner", "Summoner Creator", "1.0.3")]
 	public class SCLauncher : BaseUnityPlugin
 	{
 		public SCLauncher()

@@ -23,9 +23,6 @@ namespace SummonerCreator
             yield return new WaitUntil(() => FindObjectOfType<ServiceLocator>() != null);
             yield return new WaitUntil(() => ServiceLocator.GetService<ISaveLoaderService>() != null);
             yield return new WaitForSeconds(0.2f);
-            SCModTools.AssetPool = new GameObject();
-            SCModTools.AssetPool.hideFlags = HideFlags.HideAndDontSave;
-            SCModTools.AssetPool.SetActive(false);
             new SCMain();
             yield break;
         }

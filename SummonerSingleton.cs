@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using DM;
 using Landfall.TABS;
 using Landfall.TABS.GameMode;
 using Landfall.TABS.GameState;
@@ -98,6 +99,7 @@ namespace SummonerCreator
 
 		private void PlacementGUI()
 		{
+			var db = ContentDatabase.Instance().LandfallContentDatabase;
 			GameModeService service = ServiceLocator.GetService<GameModeService>();
 			UnitPlacementBrush unitPlacementBrush = null;
 			if (service != null && service.CurrentGameMode != null)
@@ -121,10 +123,9 @@ namespace SummonerCreator
 						}
 					}
 				}
-				LandfallUnitDatabase.GetDatabase();
 				if (unitDictionary == null)
 				{
-					unitDictionary = (Dictionary<DatabaseID, UnitBlueprint>)typeof(LandfallUnitDatabase).GetField("m_unitDictionary", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(LandfallUnitDatabase.GetDatabase());
+					unitDictionary = (Dictionary<DatabaseID, UnitBlueprint>)typeof(LandfallContentDatabase).GetField("m_unitBlueprints", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(db);
 				}
 				if (unitPlacementBrush.UnitToSpawn != summonerOriginal && flag)
 				{
@@ -155,9 +156,9 @@ namespace SummonerCreator
 					if (GUI.Button(new Rect(position.x + wc(7f), position.y + hc(7f), position.width - wc(14f), position.height - hc(14f)), "Delete Summoner", styles["button"]))
 					{
 						UnitBlueprint unitToSpawn = unitPlacementBrush.UnitToSpawn;
-						if (((List<UnitBlueprint>)typeof(LandfallUnitDatabase).GetField("Units", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(LandfallUnitDatabase.GetDatabase())).Contains(unitToSpawn))
+						if (db.GetUnitBlueprint(unitToSpawn.Entity.GUID))
 						{
-							((List<UnitBlueprint>)typeof(LandfallUnitDatabase).GetField("Units", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(LandfallUnitDatabase.GetDatabase())).Remove(unitToSpawn);
+							((Dictionary<DatabaseID, UnitBlueprint>)typeof(LandfallContentDatabase).GetField("m_unitBlueprints", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(db)).Remove(unitToSpawn.Entity.GUID);
 							if (unitDictionary.ContainsKey(unitToSpawn.Entity.GUID))
 							{
 								unitDictionary.Remove(unitToSpawn.Entity.GUID);
@@ -201,10 +202,10 @@ namespace SummonerCreator
 					GUI.Box(position2, "");
 					GUI.BeginGroup(position2);
 					Rect position3 = new Rect(wc(15f), hc(15f), position2.width - wc(30f), 0.1f * h);
-					List<UnitBlueprint> list2 = (from unit in LandfallUnitDatabase.GetDatabase().UnitList
-													where !LandfallUnitDatabase.GetDatabase().GetUnitByGUID(unit.Entity.GUID).IsCustomUnit
-													orderby LandfallUnitDatabase.GetDatabase().GetUnitByGUID(unit.Entity.GUID).Name
-													select LandfallUnitDatabase.GetDatabase().GetUnitByGUID(unit.Entity.GUID)).ToList();
+					List<UnitBlueprint> list2 = (from unit in db.GetUnitBlueprints()
+						where !db.GetUnitBlueprint(unit.Entity.GUID).IsCustomUnit
+						orderby db.GetUnitBlueprint(unit.Entity.GUID).Name
+						select db.GetUnitBlueprint(unit.Entity.GUID)).ToList();
 					list2 = (from unit in list2
 							 where ServiceLocator.GetService<ISaveLoaderService>().HasUnlockedSecret(unit.Entity.UnlockKey)
 							 select unit).ToList<UnitBlueprint>();
