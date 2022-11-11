@@ -36,6 +36,10 @@ The mod's [**Github**](https://github.com/donkeyrat/SummonerCreator) is now the 
 ### 1.0.4
 
  - Updated to the latest version of TABS.
+
+### 1.0.5
+
+ - Fixed some issues with the Summoners faction.
   
 ## Credits
 
