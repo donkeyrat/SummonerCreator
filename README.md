@@ -40,6 +40,10 @@ The mod's [**Github**](https://github.com/donkeyrat/SummonerCreator) is now the 
 ### 1.0.5
 
  - Fixed some issues with the Summoners faction.
+
+### 1.0.6
+
+ - Fixed the lack of sounds.
   
 ## Credits
 
